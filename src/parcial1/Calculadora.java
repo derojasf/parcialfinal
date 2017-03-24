@@ -55,13 +55,31 @@ public class Calculadora {
     public double coseno(){
        
         
-        resultado=cos(num1);
+        resultado=cos(Math.toRadians(num1));
         
         return resultado;
     }
     public double tangente(){
         
         resultado=tan(Math.toRadians(num1));
+        
+        return resultado;
+    }
+    public double cotangente(){
+        
+        resultado=(1/(tan(Math.toRadians(num1))));
+        
+        return resultado;
+    }
+    public double cosecante(){
+        
+        resultado=(1/(sin(Math.toRadians(num1))));
+        
+        return resultado;
+    }
+    public double secante(){
+        
+        resultado=(1/(cos(Math.toRadians(num1))));
         
         return resultado;
     }
