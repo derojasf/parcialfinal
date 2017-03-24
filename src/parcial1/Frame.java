@@ -29,7 +29,6 @@ public class Frame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        numero1 = new javax.swing.JTextField();
         numero2 = new javax.swing.JTextField();
         etiqueta1 = new javax.swing.JLabel();
         Etiqueta2 = new javax.swing.JLabel();
@@ -39,31 +38,41 @@ public class Frame extends javax.swing.JFrame {
         divide = new javax.swing.JButton();
         resultado = new javax.swing.JTextField();
         etiquetaR = new javax.swing.JLabel();
+        numero1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        numero1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                numero1ActionPerformed(evt);
-            }
-        });
-        numero1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                numero1KeyTyped(evt);
-            }
-        });
 
         etiqueta1.setText("Numero 1");
 
         Etiqueta2.setText("Numero 2");
 
         mas.setText("+");
+        mas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                masMouseClicked(evt);
+            }
+        });
 
         menos.setText("-");
+        menos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menosMouseClicked(evt);
+            }
+        });
 
         por.setText("X");
+        por.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                porMouseClicked(evt);
+            }
+        });
 
         divide.setText("/");
+        divide.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                divideMouseClicked(evt);
+            }
+        });
 
         etiquetaR.setText("Resultado");
 
@@ -82,16 +91,16 @@ public class Frame extends javax.swing.JFrame {
                             .addComponent(etiqueta1, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
                             .addComponent(Etiqueta2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(numero1, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE)
-                                    .addComponent(numero2)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(por, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)))
-                        .addGap(40, 40, 40))
+                                .addGap(60, 60, 60))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(numero1)
+                                    .addComponent(numero2, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE))
+                                .addGap(40, 40, 40))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(92, Short.MAX_VALUE)
                         .addComponent(etiquetaR, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -105,10 +114,10 @@ public class Frame extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(etiqueta1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(numero1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
-                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(etiqueta1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numero1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Etiqueta2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(numero2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -128,16 +137,33 @@ public class Frame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void numero1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numero1ActionPerformed
+    private void masMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_masMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_numero1ActionPerformed
+        ventana.num1=Double.parseDouble(numero1.getText());
+        ventana.num2=Double.parseDouble(numero2.getText());
+        resultado.setText(String.valueOf(ventana.sumar()));
+    }//GEN-LAST:event_masMouseClicked
 
-    private void numero1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_numero1KeyTyped
+    private void menosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menosMouseClicked
         // TODO add your handling code here:
-        
-        
-        
-    }//GEN-LAST:event_numero1KeyTyped
+        ventana.num1=Double.parseDouble(numero1.getText());
+        ventana.num2=Double.parseDouble(numero2.getText());
+        resultado.setText(String.valueOf(ventana.restar()));
+    }//GEN-LAST:event_menosMouseClicked
+
+    private void porMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_porMouseClicked
+        // TODO add your handling code here:
+        ventana.num1=Double.parseDouble(numero1.getText());
+        ventana.num2=Double.parseDouble(numero2.getText());
+        resultado.setText(String.valueOf(ventana.multiplicar()));
+    }//GEN-LAST:event_porMouseClicked
+
+    private void divideMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_divideMouseClicked
+        // TODO add your handling code here:
+        ventana.num1=Double.parseDouble(numero1.getText());
+        ventana.num2=Double.parseDouble(numero2.getText());
+        resultado.setText(String.valueOf(ventana.dividir()));
+    }//GEN-LAST:event_divideMouseClicked
 
     /**
      * @param args the command line arguments

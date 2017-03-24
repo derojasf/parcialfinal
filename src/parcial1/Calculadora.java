@@ -10,11 +10,35 @@ package parcial1;
  * @author Estudiantes
  */
 public class Calculadora {
-    int num1,num2,resultado;
+    double num1,num2,resultado;
     
-    public float suma(){
+    public double sumar(){
         
         resultado=num1+num2;
+        
+        return resultado;
+    }
+    public double restar(){
+        
+        resultado=num1-num2;
+        
+        return resultado;
+    }
+    public double multiplicar(){
+        
+        resultado=num1*num2;
+        
+        return resultado;
+    }
+    public double dividir(){
+        
+        if(num2==0){
+            resultado=0;
+        }
+        else{
+            resultado=num1/num2;
+        }
+        
         
         return resultado;
     }
